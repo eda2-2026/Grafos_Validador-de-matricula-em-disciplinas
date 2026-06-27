@@ -1,150 +1,150 @@
 DISCIPLINAS = {
     # Compartilhadas
-    "ALGORITMOS E PROGRAMAÇÃO DE COMPUTADORES": {
+    "APC": {
         "code": "CIC0004",
         "name": "ALGORITMOS E PROGRAMAÇÃO DE COMPUTADORES",
         "prerequisites": [],
     },
-    "ENGENHARIA E AMBIENTE": {
+    "EA": {
         "code": "FGA0161",
         "name": "ENGENHARIA E AMBIENTE",
         "prerequisites": [],
     },
-    "INTRODUÇÃO À ENGENHARIA": {
+    "IE": {
         "code": "FGA0163",
         "name": "INTRODUÇÃO À ENGENHARIA",
         "prerequisites": [],
     },
-    "DESENHO INDUSTRIAL ASSISTIDO POR COMPUTADOR": {
+    "DIAC": {
         "code": "FGA0168",
         "name": "DESENHO INDUSTRIAL ASSISTIDO POR COMPUTADOR",
         "prerequisites": [],
     },
-    "CÁLCULO 1": {
+    "C1": {
         "code": "MAT0025",
         "name": "CÁLCULO 1",
         "prerequisites": [],
     },
 
-    "PROBABILIDADE E ESTATÍSTICA APLICADO A ENGENHARIA": {
+    "PE": {
         "code": "FGA0157",
         "name": "PROBABILIDADE E ESTATÍSTICA APLICADO A ENGENHARIA",
-        "prerequisites": ["CÁLCULO 1"],
+        "prerequisites": ["C1"],
     },
-    "FISICA 1": {
+    "F1": {
         "code": "IFD0171",
         "name": "FISICA 1",
         "prerequisites": [],
     },
-    "FISICA 1 EXPERIMENTAL": {
+    "F1EXP": {
         "code": "IFD0173",
         "name": "FISICA 1 EXPERIMENTAL",
         "prerequisites": [],
     },
-    "CÁLCULO 2": {
+    "C2": {
         "code": "MAT0026",
         "name": "CÁLCULO 2",
-        "prerequisites": ["CÁLCULO 1"],
+        "prerequisites": ["C1"],
     },
-    "INTRODUCAO A ALGEBRA LINEAR": {
+    "IAL": {
         "code": "MAT0031",
         "name": "INTRODUCAO A ALGEBRA LINEAR",
         "prerequisites": [],
     },
 
-    "ENGENHARIA ECONÔMICA": {
+    "ENGECON": {
         "code": "FGA0133",
         "name": "ENGENHARIA ECONÔMICA",
         "prerequisites": [],
     },
-    "MÉTODOS NUMÉRICOS PARA ENGENHARIA": {
+    "MÉTODOS": {
         "code": "FGA0160",
         "name": "MÉTODOS NUMÉRICOS PARA ENGENHARIA",
-        "prerequisites": ["CÁLCULO 2"],
+        "prerequisites": ["C2"],
     },
-    "HUMANIDADES E CIDADANIA": {
+    "HC": {
         "code": "FGA0164",
         "name": "HUMANIDADES E CIDADANIA",
         "prerequisites": [],
     },
 
     # Compartilhadas sem contar Software
-    "MECANICA DOS SÓLIDOS 1 PARA ENGENHARIA": {
+    "MECSOL1": {
         "code": "FGA0154",
         "name": "MECANICA DOS SÓLIDOS 1 PARA ENGENHARIA",
-        "prerequisites": ["FISICA 1"],
+        "prerequisites": ["F1"],
     },
-    "QUIMICA GERAL TEORICA": {
+    "QUIMICA TEORICA": {
         "code": "IQD0125",
         "name": "QUIMICA GERAL TEORICA",
         "prerequisites": [],
     },
-    "QUIMICA GERAL EXPERIMENTAL": {
+    "QUIMICA EXPERIMENTAL": {
         "code": "IQD0126",
         "name": "QUIMICA GERAL EXPERIMENTAL",
         "prerequisites": [],
     },
-    "CÁLCULO 3": {
+    "C3": {
         "code": "MAT0027",
         "name": "CÁLCULO 3",
-        "prerequisites": ["CÁLCULO 1"],
+        "prerequisites": ["C1"],
     },
 
     # Aeroespacial
-    "CIÊNCIAS AEROESPACIAIS": {
+    "CA": {
         "code": "FGA0254",
         "name": "CIÊNCIAS AEROESPACIAIS",
         "prerequisites": [],
     },
-    "SISTEMAS AEROESPACIAIS": {
+    "SA": {
         "code": "FGA0008",
         "name": "SISTEMAS AEROESPACIAIS",
-        "prerequisites": ["FISICA 1", "CIÊNCIAS AEROESPACIAIS"],
+        "prerequisites": ["F1", "CA"],
     },
 
     # Automotiva
-    "ONDULATÓRIA E FÍSICA TÉRMICA PARA ENGENHARIA": {
+    "ONDULATÓRIA E FÍSICA TÉRMICA": {
         "code": "FGA0090",
         "name": "ONDULATÓRIA E FÍSICA TÉRMICA PARA ENGENHARIA",
-        "prerequisites": ["CÁLCULO 1", "FISICA 1", "FISICA 1 EXPERIMENTAL"],
+        "prerequisites": ["C1", "F1", "F1EXP"],
     },
-    "LABORATÓRIO DE ONDULATÓRIA E FÍSICA TÉRMICA PARA A ENGENHARIA": {
+    "LAB DE ONDULATÓRIA E FÍSICA TÉRMICA": {
         "code": "FGA0107",
         "name": "LABORATÓRIO DE ONDULATÓRIA E FÍSICA TÉRMICA PARA A ENGENHARIA",
-        "prerequisites": ["FISICA 1", "FISICA 1 EXPERIMENTAL"],
+        "prerequisites": ["F1", "F1EXP"],
     },
-    "INTRODUÇÃO AO DESIGN E CONCEPÇÃO DE VEÍCULOS": {
+    "DIAC2": {
         "code": "FGA0155",
         "name": "INTRODUÇÃO AO DESIGN E CONCEPÇÃO DE VEÍCULOS",
-        "prerequisites": ["DESENHO INDUSTRIAL ASSISTIDO POR COMPUTADOR"],
+        "prerequisites": ["DIAC"],
     },
 
     # Energia
 
     # Software
-    "MATEMÁTICA DISCRETA 1": {
+    "MD1": {
         "code": "FGA0085",
         "name": "MATEMÁTICA DISCRETA 1",
-        "prerequisites": ["APC"],
+        "prerequisites": [],
     },
-    "ORIENTAÇÃO A OBJETOS": {
+    "OO": {
         "code": "FGA0158",
         "name": "ORIENTAÇÃO A OBJETOS",
-        "prerequisites": ["ALGORITMOS E PROGRAMAÇÃO DE COMPUTADORES"],
+        "prerequisites": ["APC"],
     },
 
     # Eletrônica
 
     # Software e Eletrônica
-    "PRÁTICA DE ELETRÔNICA DIGITAL 1": {
+    "PED1": {
         "code": "FGA0071",
         "name": "PRÁTICA DE ELETRÔNICA DIGITAL 1",
-        "prerequisites": ["INTRODUCAO A ALGEBRA LINEAR"],
+        "prerequisites": ["IAL"],
     },
-    "TEORIA DE ELETRÔNICA DIGITAL 1": {
+    "TED1": {
         "code": "FGA0073",
         "name": "TEORIA DE ELETRÔNICA DIGITAL 1",
-        "prerequisites": ["INTRODUCAO A ALGEBRA LINEAR"],
+        "prerequisites": ["IAL"],
     },
 }
 
@@ -153,118 +153,118 @@ CURSOS = {
     "AEROESPACIAL": {
         "name": "Engenharia Aeroespacial",
         "subjects": [
-            "ALGORITMOS E PROGRAMAÇÃO DE COMPUTADORES",
-            "ENGENHARIA E AMBIENTE",
-            "INTRODUÇÃO À ENGENHARIA",
-            "DESENHO INDUSTRIAL ASSISTIDO POR COMPUTADOR",
-            "CÁLCULO 1",
-            "PROBABILIDADE E ESTATÍSTICA APLICADO A ENGENHARIA",
-            "FISICA 1",
-            "FISICA 1 EXPERIMENTAL",
-            "CÁLCULO 2",
-            "INTRODUCAO A ALGEBRA LINEAR",
-            "ENGENHARIA ECONÔMICA",
-            "MÉTODOS NUMÉRICOS PARA ENGENHARIA",
-            "HUMANIDADES E CIDADANIA",
-            "MECANICA DOS SÓLIDOS 1 PARA ENGENHARIA",
-            "QUIMICA GERAL TEORICA",
-            "QUIMICA GERAL EXPERIMENTAL",
-            "CÁLCULO 3",
-            "CIÊNCIAS AEROESPACIAIS",
-            "SISTEMAS AEROESPACIAIS"
+            "APC",
+            "EA",
+            "IE",
+            "DIAC",
+            "C1",
+            "PE",
+            "F1",
+            "F1EXP",
+            "C2",
+            "IAL",
+            "ENGECON",
+            "MÉTODOS",
+            "HC",
+            "MECSOL1",
+            "QUIMICA TEORICA",
+            "QUIMICA EXPERIMENTAL",
+            "C3",
+            "CA",
+            "SA"
         ],
     },
     "AUTOMOTIVA": {
         "name": "Engenharia Automotiva",
         "subjects": [
-            "ALGORITMOS E PROGRAMAÇÃO DE COMPUTADORES",
-            "ENGENHARIA E AMBIENTE",
-            "INTRODUÇÃO À ENGENHARIA",
-            "DESENHO INDUSTRIAL ASSISTIDO POR COMPUTADOR",
-            "CÁLCULO 1",
-            "PROBABILIDADE E ESTATÍSTICA APLICADO A ENGENHARIA",
-            "FISICA 1",
-            "FISICA 1 EXPERIMENTAL",
-            "CÁLCULO 2",
-            "INTRODUCAO A ALGEBRA LINEAR",
-            "ENGENHARIA ECONÔMICA",
-            "MÉTODOS NUMÉRICOS PARA ENGENHARIA",
-            "HUMANIDADES E CIDADANIA",
-            "MECANICA DOS SÓLIDOS 1 PARA ENGENHARIA",
-            "QUIMICA GERAL TEORICA",
-            "QUIMICA GERAL EXPERIMENTAL",
-            "CÁLCULO 3",
-            "ONDULATÓRIA E FÍSICA TÉRMICA PARA ENGENHARIA",
-            "LABORATÓRIO DE ONDULATÓRIA E FÍSICA TÉRMICA PARA A ENGENHARIA",
-            "INTRODUÇÃO AO DESIGN E CONCEPÇÃO DE VEÍCULOS"
+            "APC",
+            "EA",
+            "IE",
+            "DIAC",
+            "C1",
+            "PE",
+            "F1",
+            "F1EXP",
+            "C2",
+            "IAL",
+            "ENGECON",
+            "MÉTODOS",
+            "HC",
+            "MECSOL1",
+            "QUIMICA TEORICA",
+            "QUIMICA EXPERIMENTAL",
+            "C3",
+            "ONDULATÓRIA E FÍSICA TÉRMICA",
+            "LAB DE ONDULATÓRIA E FÍSICA TÉRMICA",
+            "DIAC2"
         ],
     },
     "ENERGIA": {
         "name": "Engenharia de Energia",
         "subjects": [
-            "ALGORITMOS E PROGRAMAÇÃO DE COMPUTADORES",
-            "ENGENHARIA E AMBIENTE",
-            "INTRODUÇÃO À ENGENHARIA",
-            "DESENHO INDUSTRIAL ASSISTIDO POR COMPUTADOR",
-            "CÁLCULO 1",
-            "PROBABILIDADE E ESTATÍSTICA APLICADO A ENGENHARIA",
-            "FISICA 1",
-            "FISICA 1 EXPERIMENTAL",
-            "CÁLCULO 2",
-            "INTRODUCAO A ALGEBRA LINEAR",
-            "ENGENHARIA ECONÔMICA",
-            "MÉTODOS NUMÉRICOS PARA ENGENHARIA",
-            "HUMANIDADES E CIDADANIA",
-            "MECANICA DOS SÓLIDOS 1 PARA ENGENHARIA",
-            "QUIMICA GERAL TEORICA",
-            "QUIMICA GERAL EXPERIMENTAL",
-            "CÁLCULO 3",
+            "APC",
+            "EA",
+            "IE",
+            "DIAC",
+            "C1",
+            "PE",
+            "F1",
+            "F1EXP",
+            "C2",
+            "IAL",
+            "ENGECON",
+            "MÉTODOS",
+            "HC",
+            "MECSOL1",
+            "QUIMICA TEORICA",
+            "QUIMICA EXPERIMENTAL",
+            "C3",
         ],
     },
     "SOFTWARE": {
         "name": "Engenharia de Software",
         "subjects": [
-            "ALGORITMOS E PROGRAMAÇÃO DE COMPUTADORES",
-            "ENGENHARIA E AMBIENTE",
-            "INTRODUÇÃO À ENGENHARIA",
-            "DESENHO INDUSTRIAL ASSISTIDO POR COMPUTADOR",
-            "CÁLCULO 1",
-            "PROBABILIDADE E ESTATÍSTICA APLICADO A ENGENHARIA",
-            "FISICA 1",
-            "FISICA 1 EXPERIMENTAL",
-            "CÁLCULO 2",
-            "INTRODUCAO A ALGEBRA LINEAR",
-            "ENGENHARIA ECONÔMICA",
-            "MÉTODOS NUMÉRICOS PARA ENGENHARIA",
-            "HUMANIDADES E CIDADANIA",
-            "MATEMÁTICA DISCRETA 1",
-            "ORIENTAÇÃO A OBJETOS",
-            "PRÁTICA DE ELETRÔNICA DIGITAL 1",
-            "TEORIA DE ELETRÔNICA DIGITAL 1",
+            "APC",
+            "EA",
+            "IE",
+            "DIAC",
+            "C1",
+            "PE",
+            "F1",
+            "F1EXP",
+            "C2",
+            "IAL",
+            "ENGECON",
+            "MÉTODOS",
+            "HC",
+            "MD1",
+            "OO",
+            "PED1",
+            "TED1",
         ],
     },
     "ELETRONICA": {
         "name": "Engenharia Eletrônica",
         "subjects": [
-            "ALGORITMOS E PROGRAMAÇÃO DE COMPUTADORES",
-            "ENGENHARIA E AMBIENTE",
-            "INTRODUÇÃO À ENGENHARIA",
-            "DESENHO INDUSTRIAL ASSISTIDO POR COMPUTADOR",
-            "CÁLCULO 1",
-            "PROBABILIDADE E ESTATÍSTICA APLICADO A ENGENHARIA",
-            "FISICA 1",
-            "FISICA 1 EXPERIMENTAL",
-            "CÁLCULO 2",
-            "INTRODUCAO A ALGEBRA LINEAR",
-            "ENGENHARIA ECONÔMICA",
-            "MÉTODOS NUMÉRICOS PARA ENGENHARIA",
-            "HUMANIDADES E CIDADANIA",
-            "MECANICA DOS SÓLIDOS 1 PARA ENGENHARIA",
-            "QUIMICA GERAL TEORICA",
-            "QUIMICA GERAL EXPERIMENTAL",
-            "CÁLCULO 3",
-            "PRÁTICA DE ELETRÔNICA DIGITAL 1",
-            "TEORIA DE ELETRÔNICA DIGITAL 1",
+            "APC",
+            "EA",
+            "IE",
+            "DIAC",
+            "C1",
+            "PE",
+            "F1",
+            "F1EXP",
+            "C2",
+            "IAL",
+            "ENGECON",
+            "MÉTODOS",
+            "HC",
+            "MECSOL1",
+            "QUIMICA TEORICA",
+            "QUIMICA EXPERIMENTAL",
+            "C3",
+            "PED1",
+            "TED1",
         ],
     },
 }
