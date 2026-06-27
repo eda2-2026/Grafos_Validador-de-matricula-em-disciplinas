@@ -73,3 +73,27 @@ st.subheader("Seleção atual")
 st.write("**Curso:**", CURSOS[selected_course_id]["name"])
 st.write("**Concluídas:**", sorted(completed_subjects))
 st.write("**Pretendidas:**", sorted(planned_subjects))
+
+from src.graph_utils import build_reverse_graph, validate_planned_subjects
+from src.estruturasCurriculares import DISCIPLINAS
+
+code_to_id = {v["code"]: k for k, v in DISCIPLINAS.items()}
+
+if planned_subjects:
+    st.divider()
+    st.subheader("Validação de Matrícula")
+
+    subject_codes_in_course = [s["code"] for s in subjects]
+    reverse_graph = build_reverse_graph(subject_codes_in_course)
+    
+    validation_results = validate_planned_subjects(planned_subjects, completed_subjects, reverse_graph)
+    
+    for result in validation_results:
+        subj_code = result["subject"]
+        subj_id = code_to_id.get(subj_code, subj_code)
+        
+        if result["allowed"]:
+            st.success(f"**{subj_id}** liberada.")
+        else:
+            missing_ids = [code_to_id.get(c, c) for c in result["missing"]]
+            st.error(f"**{subj_id}** bloqueada. Falta: {', '.join(missing_ids)}.")
