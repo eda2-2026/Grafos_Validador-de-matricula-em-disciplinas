@@ -97,3 +97,21 @@ if planned_subjects:
         else:
             missing_ids = [code_to_id.get(c, c) for c in result["missing"]]
             st.error(f"**{subj_id}** bloqueada. Falta: {', '.join(missing_ids)}.")
+
+    st.subheader("Caminhos de Dependência")
+    for result in validation_results:
+        visual_path = []
+        for p in result["prerequisites"]:
+            p_id = code_to_id.get(p, p)
+            if p in completed_subjects:
+                visual_path.append(f"[{p_id} ✅]")
+            else:
+                visual_path.append(f"[{p_id} ⚠️]")
+        
+        target_id = code_to_id.get(result["subject"], result["subject"])
+        if result["allowed"]:
+            visual_path.append(f"[{target_id} 🎯]")
+        else:
+            visual_path.append(f"[{target_id} 🎯❌]")
+            
+        st.write(" → ".join(visual_path))
