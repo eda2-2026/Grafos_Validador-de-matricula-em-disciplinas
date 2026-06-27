@@ -46,3 +46,30 @@ def build_reverse_graph(subject_codes_in_course: List[str]) -> Dict[str, List[st
                 reverse_graph[code].append(p_code)
                 
     return reverse_graph
+
+def get_all_prerequisites(subject_code: str, reverse_graph: Dict[str, List[str]]) -> Set[str]:
+    """
+    Esta função deverá ser implementada pelo Davi (Commit 5) utilizando DFS!
+    
+    Enquanto a DFS não está pronta, este stub retorna apenas os pré-requisitos diretos
+    para que o Euller consiga testar as validações e a interface.
+    """
+    # TO-DO: Substituir por DFS real (Commit 5 - Davi)
+    return set(reverse_graph.get(subject_code, []))
+
+def validate_planned_subjects(planned: Set[str], completed: Set[str], reverse_graph: Dict[str, List[str]]) -> List[dict]:
+    """
+    Valida disciplinas planejadas utilizando o grafo reverso e DFS (via get_all_prerequisites).
+    """
+    results = []
+    for p_code in planned:
+        required = get_all_prerequisites(p_code, reverse_graph)
+        missing = required - completed
+        
+        results.append({
+            "subject": p_code,
+            "allowed": len(missing) == 0,
+            "prerequisites": list(required),
+            "missing": list(missing)
+        })
+    return results
