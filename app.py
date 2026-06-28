@@ -120,7 +120,7 @@ def render_dependency_path(result: dict, completed_subjects: set, code_to_id: di
     """
     cards = []
 
-    for prerequisite_code in result["prerequisites"]:
+    for prerequisite_code in reversed(result["prerequisites"]):
         if prerequisite_code in completed_subjects:
             status = "completed"
         else:
