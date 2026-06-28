@@ -75,28 +75,37 @@ def dfs(graph: dict[str, list[str]], start: str) -> list[str]:
 
     return visit_order
 
-def get_all_prerequisites(subject_key: str, reverse_graph: dict[str, list[str]]) -> list[str]:
+def get_all_prerequisites(subject_code: str, reverse_graph: Dict[str, List[str]]) -> Set[str]:
+    visited = set()
+    def dfs(node):
+        if node in visited:
+            return
+        visited.add(node)
+        for neighbor in reverse_graph.get(node, []):
+            dfs(neighbor)
+    dfs(subject_code)
+    visited.remove(subject_code) if subject_code in visited else None
+    return visited
+
+def get_subgraph_edges(start: str, reverse_graph: Dict[str, List[str]]) -> List[tuple]:
     """
-    Retorna todos os pré-requisitos diretos e indiretos de uma disciplina.
-
-    A função usa DFS no grafo reverso.
-
-    Exemplo:
-        Grafo normal:
-            APC -> OO
-
-        Grafo reverso:
-            OO -> APC
+    Retorna uma lista de arestas (tuplas de códigos) percorrendo do nó alvo
+    até suas folhas no grafo reverso. Uma aresta (A, B) indica que A é pré-requisito de B.
     """
-    visited_subjects = dfs(reverse_graph, subject_key)
+    edges = set()
+    visited = set()
+    def dfs(node):
+        if node in visited:
+            return
+        visited.add(node)
+        for prereq in reverse_graph.get(node, []):
+            edges.add((prereq, node))
+            dfs(prereq)
+            
+    dfs(start)
+    return list(edges)
 
-    return [
-        subject
-        for subject in visited_subjects
-        if subject != subject_key
-    ]
-
-def validate_planned_subjects(planned: Set[str], completed: Set[str],reverse_graph: Dict[str, List[str]]) -> List[dict]:
+def validate_planned_subjects(planned: Set[str], completed: Set[str], reverse_graph: Dict[str, List[str]]) -> List[dict]:
     """
     Valida disciplinas planejadas utilizando DFS no grafo reverso.
 
@@ -108,17 +117,16 @@ def validate_planned_subjects(planned: Set[str], completed: Set[str],reverse_gra
     for p_code in planned:
         required = get_all_prerequisites(p_code, reverse_graph)
 
-        missing = [
-            prerequisite
-            for prerequisite in required
-            if prerequisite not in completed
-        ]
-
+        missing = required - completed
+        
+        # Obter as ramificações visuais (arestas/edges)
+        edges = get_subgraph_edges(p_code, reverse_graph)
+        
         results.append({
             "subject": p_code,
             "allowed": len(missing) == 0,
-            "prerequisites": required,
-            "missing": missing,
+            "prerequisites": list(required),
+            "missing": list(missing),
+            "edges": edges
         })
-
     return results
