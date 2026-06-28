@@ -16,7 +16,9 @@
 Descreva os objetivos do seu projeto e como ele funciona. 
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+![Cursos Disponíveis](/docs/curso.png)
+*Figura 1: Visão inicial da interface selecionando o curso de Engenharia de Software.*
+
 
 ## Instalação
 **Linguagem**: xxxxxx<br>
