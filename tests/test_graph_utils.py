@@ -62,10 +62,10 @@ def test_get_all_prerequisites_returns_direct_and_indirect_prerequisites():
 
     result = get_all_prerequisites("EDA2", reverse_graph)
 
-    assert result == ["EDA1", "APC"]
+    assert result == {"EDA1", "APC"}
 
 
-def test_get_all_prerequisites_returns_empty_list_when_subject_has_no_prerequisites():
+def test_get_all_prerequisites_returns_empty_set_when_subject_has_no_prerequisites():
     reverse_graph = {
         "APC": [],
         "EDA1": ["APC"],
@@ -73,7 +73,7 @@ def test_get_all_prerequisites_returns_empty_list_when_subject_has_no_prerequisi
 
     result = get_all_prerequisites("APC", reverse_graph)
 
-    assert result == []
+    assert result == set()
 
 
 def test_get_all_prerequisites_with_more_than_one_prerequisite_branch():
@@ -89,7 +89,7 @@ def test_get_all_prerequisites_with_more_than_one_prerequisite_branch():
         reverse_graph
     )
 
-    assert result == ["C1", "F1", "F1EXP"]
+    assert result == {"C1", "F1", "F1EXP"}
 
 
 def test_get_all_prerequisites_using_real_reverse_graph():
@@ -103,4 +103,4 @@ def test_get_all_prerequisites_using_real_reverse_graph():
 
     result = get_all_prerequisites("FGA0160", reverse_graph)
 
-    assert result == ["MAT0026", "MAT0025"]
+    assert result == {"MAT0026", "MAT0025"}
