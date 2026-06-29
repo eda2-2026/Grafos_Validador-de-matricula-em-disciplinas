@@ -10,7 +10,7 @@
 | 23/1026714  |  Euller Júlio da Silva |
 
 ## Apresentação do trabalho
-[Link para o vídeo de apresentação]()
+[Link para o vídeo de apresentação](https://youtu.be/gpkR6RO53SQ)
 
 ## Sobre
 O **Validador de Matrícula em Disciplinas** é um trabalho desenvolvido para auxiliar estudantes, do campus UnB Gama, na verificação de matérias que podem ser cursadas com base nos pré-requisitos já concluídos. O objetivo do projeto é simular uma situação real de matrícula acadêmica, em que o aluno escolhe seu curso (uma das 5 engenharias), informa as disciplinas já cursadas anteriormente, e seleciona aquelas que pretende cursar no próximo semestre.
